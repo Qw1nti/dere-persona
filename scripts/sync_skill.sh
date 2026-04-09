@@ -6,7 +6,9 @@ SOURCE="$ROOT/skills/dere-persona/SKILL.md"
 
 TARGETS=(
   "$ROOT/.agents/skills/dere-persona/SKILL.md"
+  "$ROOT/.claude/skills/dere-persona/SKILL.md"
   "$ROOT/.cursor/skills/dere-persona/SKILL.md"
+  "$ROOT/.windsurf/skills/dere-persona/SKILL.md"
   "$ROOT/plugins/dere-persona/skills/dere-persona/SKILL.md"
 )
 
