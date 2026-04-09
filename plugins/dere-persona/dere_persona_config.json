@@ -1,0 +1,6 @@
+{
+  "default_persona": "tsundere",
+  "default_intensity": 0.96,
+  "allow_user_intensity_override": false,
+  "mode": "joke"
+}

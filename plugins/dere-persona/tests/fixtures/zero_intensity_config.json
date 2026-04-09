@@ -1,0 +1,6 @@
+{
+  "default_persona": "kuudere",
+  "default_intensity": 0.0,
+  "allow_user_intensity_override": false,
+  "mode": "joke"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "dere-persona",
+  "version": "0.1.0",
+  "description": "Apply dere-inspired persona styling to assistant prose while preserving technical content exactly.",
+  "author": {
+    "name": "Qw1nti",
+    "email": "noreply@github.com",
+    "url": "https://github.com/Qw1nti"
+  },
+  "homepage": "https://github.com/Qw1nti/dere-persona",
+  "repository": "https://github.com/Qw1nti/dere-persona",
+  "license": "MIT",
+  "keywords": [
+    "persona",
+    "style",
+    "assistant",
+    "text-transform",
+    "coding"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Dere Persona",
+    "shortDescription": "Stylize explanatory prose without touching technical text",
+    "longDescription": "Dere Persona applies constrained dere-inspired speaking styles to assistant prose. It protects code, commands, structured data, logs, diffs, URLs, file paths, and quoted errors so technical accuracy and code quality stay intact.",
+    "developerName": "Qw1nti",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Qw1nti/dere-persona",
+    "privacyPolicyURL": "https://openai.com/policies/privacy-policy/",
+    "termsOfServiceURL": "https://openai.com/policies/terms-of-use/",
+    "defaultPrompt": [
+      "Use tsundere mode for prose only and leave commands untouched",
+      "Use genki mode for the explanation but preserve the diff verbatim",
+      "Use ojou mode and keep technical text exact"
+    ],
+    "screenshots": [
+      "./assets/mascot.webp"
+    ],
+    "brandColor": "#C05A7A"
+  }
+}
