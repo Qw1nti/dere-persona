@@ -128,6 +128,21 @@ class PersonaRegressionTests(unittest.TestCase):
         output = transform_text(text, persona="kamidere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
         self.assertRegex(output, r"(only correct|optimal|valid solution|debate is unnecessary)")
 
+    def test_bakadere_contains_chaos_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="bakadere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(WAIT WAIT|I THINK IT WORKS|SHOULD NOT HAVE WORKED|FIXED)")
+
+    def test_himedere_contains_praise_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="himedere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(grateful|standards|recognition|thank me)")
+
+    def test_sadodere_contains_teasing_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="sadodere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(Adorable|Try to keep up|ruin it|entertaining)")
+
 
 if __name__ == "__main__":
     unittest.main()
