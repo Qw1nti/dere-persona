@@ -88,12 +88,23 @@ class ProfileLoaderTests(unittest.TestCase):
         self.assertEqual("kuudere", profile.name)
         self.assertIn("Execute it.", profile.example_phrases)
 
+    def test_new_json_profile_loads(self) -> None:
+        profile = load_profile("kamidere", ROOT / "profiles")
+        self.assertEqual("kamidere", profile.name)
+        self.assertIn("I have eliminated all incorrect outcomes.", profile.example_phrases)
+
 
 class SettingsTests(unittest.TestCase):
     def test_default_persona_is_used_when_persona_is_omitted(self) -> None:
         text = "Explain the fix carefully."
         output = transform_text(text, persona=None, profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
         self.assertNotEqual(text, output)
+
+    def test_generic_new_persona_transforms_prose(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="kamidere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertNotEqual(text, output)
+        self.assertIn("correct", output.lower())
 
 
 if __name__ == "__main__":

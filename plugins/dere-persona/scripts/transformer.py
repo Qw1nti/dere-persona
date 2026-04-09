@@ -69,7 +69,7 @@ def _stylize_prose(text: str, profile: PersonaProfile, intensity: float, prose_i
     if len(re.findall(r"[A-Za-z]+", text)) < 4:
         return text
 
-    updated = _apply_persona_signature(text, profile.name, intensity)
+    updated = _apply_persona_signature(text, profile, intensity)
     updated = _normalize_repetition(updated, profile)
     updated = _enforce_safety(updated)
     return updated
@@ -122,9 +122,10 @@ def _append_suffix(text: str, suffix: str) -> str:
     return f"{stripped}. {suffix}{trailing}"
 
 
-def _apply_persona_signature(text: str, persona_name: str, intensity: float) -> str:
+def _apply_persona_signature(text: str, profile: PersonaProfile, intensity: float) -> str:
     if intensity < 0.7:
         return text
+    persona_name = profile.name
     if persona_name == "tsundere":
         return _tsundere_signature(text)
     if persona_name == "kuudere":
@@ -137,7 +138,7 @@ def _apply_persona_signature(text: str, persona_name: str, intensity: float) -> 
         return _ojou_signature(text)
     if persona_name == "yandere_safe":
         return _yandere_safe_signature(text)
-    return text
+    return _generic_profile_sentence_flavor(text, profile)
 
 
 def _tsundere_signature(text: str) -> str:
@@ -273,6 +274,18 @@ def _yandere_safe_sentence_flavor(text: str) -> str:
         ["Stay right there.", "Keep watching.", "Nothing else matters right now.", "Pay attention."],
         ["I am still watching this closely.", "We are not losing track of this.", "This must stay stable.", "I will not let this drift."],
     )
+
+
+def _generic_profile_sentence_flavor(text: str, profile: PersonaProfile) -> str:
+    patterns = profile.speech_patterns
+    prefixes = patterns.get("prefixes", [])
+    suffixes = patterns.get("suffixes", [])
+    if not prefixes:
+        prefixes = [profile.example_phrases[0]] if profile.example_phrases else [profile.name]
+    if not suffixes:
+        suffixes = profile.example_phrases[:2] or [profile.tone]
+    first_stammer = profile.name in {"dandere", "tsundere"}
+    return _flavor_sentences(text, prefixes, suffixes, first_stammer=first_stammer)
 
 
 def _normalize_repetition(text: str, profile: PersonaProfile) -> str:
