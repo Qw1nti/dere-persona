@@ -3,7 +3,7 @@
 An absurd Codex skill/plugin that makes the assistant talk like a dere archetype while leaving technical content alone.
 
 [![Last Commit](https://img.shields.io/github/last-commit/Qw1nti/dere-persona?style=for-the-badge)](https://github.com/Qw1nti/dere-persona/commits/main)
-[![License](https://img.shields.io/github/license/Qw1nti/dere-persona?style=for-the-badge)](./LICENSE)
+[![License](https://img.shields.io/github/license/Qw1nti/dere-persona?style=for-the-badge)](https://github.com/Qw1nti/dere-persona/blob/main/LICENSE)
 [![Repo](https://img.shields.io/github/stars/Qw1nti/dere-persona?style=for-the-badge)](https://github.com/Qw1nti/dere-persona)
 
 Install • Usage • Personas • Safety • Development
@@ -60,10 +60,17 @@ The persona goes around technical content, not inside it.
 
 This repo contains both:
 
+- a standard installable skill path at [`skills/dere-persona/SKILL.md`](./skills/dere-persona/SKILL.md)
 - a top-level Codex skill at [`.agents/skills/dere-persona/SKILL.md`](./.agents/skills/dere-persona/SKILL.md)
 - a local plugin bundle at [`plugins/dere-persona`](./plugins/dere-persona)
 
 If you are using a Codex setup that reads local skills from the repo, the skill file is the important part.
+
+For installers that expect a standard repo skill layout:
+
+```bash
+npx skills add https://github.com/Qw1nti/dere-persona --skill dere-persona
+```
 
 ## Usage
 
@@ -163,6 +170,8 @@ Hard limits:
 ├── .agents/
 │   ├── plugins/marketplace.json
 │   └── skills/dere-persona/SKILL.md
+├── skills/
+│   └── dere-persona/SKILL.md
 ├── plugins/
 │   └── dere-persona/
 │       ├── .codex-plugin/plugin.json
