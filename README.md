@@ -57,7 +57,7 @@ The persona goes around technical content, not inside it.
 
 The explanation itself is still supposed to sound absurdly in-character, including coding explanations.
 
-## Example
+## Before / After
 
 ### Normal
 
@@ -70,6 +70,12 @@ The explanation itself is still supposed to sound absurdly in-character, includi
 ### Coding Example
 
 > H-Hmph. `pytest -q` is only running the tests quietly, okay? I-It's not magically causing the failure... your tests are broken. A-Anyway, read the traceback from the first real error instead of panicking over the last line... obvious, right?
+
+### What Good Looks Like
+
+- the archetype voice stays present through the whole body
+- the middle paragraphs do not flatten into normal textbook prose
+- technical spans still remain exact
 
 ## Installation
 
@@ -88,6 +94,24 @@ npx skills add https://github.com/Qw1nti/dere-persona --skill dere-persona
 ```
 
 `npx skills` supports Codex, Claude Code, Cursor, GitHub Copilot, Cline, Windsurf, OpenCode, and many more agents via the shared Agent Skills format.
+
+### Quick Start
+
+```bash
+# list skills in this repo
+npx skills add Qw1nti/dere-persona --list
+
+# install globally for Codex
+npx skills add Qw1nti/dere-persona --skill dere-persona -a codex -g
+```
+
+Restart your agent after installation, then try:
+
+```text
+$dere-persona Talk like a tsundere and explain what an engine is
+```
+
+### Agent Installs
 
 Useful install commands:
 
@@ -138,6 +162,18 @@ Examples of agent ids supported by `npx skills` include:
 
 Project-local install also works if you omit `-g`.
 
+### Agent Matrix
+
+| Agent | Install Command |
+| --- | --- |
+| Codex | `npx skills add Qw1nti/dere-persona --skill dere-persona -a codex -g` |
+| Claude Code | `npx skills add Qw1nti/dere-persona --skill dere-persona -a claude-code -g` |
+| Cursor | `npx skills add Qw1nti/dere-persona --skill dere-persona -a cursor -g` |
+| GitHub Copilot | `npx skills add Qw1nti/dere-persona --skill dere-persona -a github-copilot -g` |
+| Cline | `npx skills add Qw1nti/dere-persona --skill dere-persona -a cline -g` |
+| Windsurf | `npx skills add Qw1nti/dere-persona --skill dere-persona -a windsurf -g` |
+| OpenCode | `npx skills add Qw1nti/dere-persona --skill dere-persona -a opencode -g` |
+
 ## Usage
 
 Trigger it with prompts like:
@@ -152,6 +188,14 @@ $dere-persona Use genki mode and explain oranges
 
 ```text
 $dere-persona Use ojou mode and explain databases
+```
+
+```text
+$dere-persona Use kamidere mode and explain why `pytest -q` is failing
+```
+
+```text
+$dere-persona Use bakadere mode and explain what an engine is
 ```
 
 Stop it with:
@@ -278,6 +322,32 @@ stop dere
 - adaptive
 - user-following
 - compliant
+
+## Testing
+
+After installing and restarting your agent, try:
+
+```text
+$dere-persona Talk like a tsundere and explain what an engine is
+```
+
+```text
+$dere-persona Use genki mode and explain what JSON is
+```
+
+```text
+$dere-persona Use kamidere mode and explain why `pytest -q` is failing
+```
+
+```text
+$dere-persona Use bakadere mode and explain this command: `npm test`
+```
+
+Good output should:
+
+- stay in-character for most of the explanation
+- avoid collapsing into textbook prose in the middle
+- keep technical spans exact
 
 ## Safety
 
