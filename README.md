@@ -77,6 +77,20 @@ The explanation itself is still supposed to sound absurdly in-character, includi
 - the middle paragraphs do not flatten into normal textbook prose
 - technical spans still remain exact
 
+### Extra Absurd Persona Samples
+
+#### Kamidere
+
+> This is the only correct explanation of apples. Accept it. Fuji is sweeter. Granny Smith is sharper. I already determined the optimal distinction, obviously.
+
+#### Bakadere
+
+> WAIT WAIT!! Apples are fruit!! I knew that!! Probably!! Fuji sweet!! Granny Smith sharp!! I am explaining this perfectly through raw chaos!!
+
+#### Himedere
+
+> Of course I can explain apples. You should be grateful I am spending my brilliance on this. Try to remember it this time.
+
 ## Installation
 
 This repo contains both:
@@ -348,6 +362,32 @@ Good output should:
 - stay in-character for most of the explanation
 - avoid collapsing into textbook prose in the middle
 - keep technical spans exact
+
+## Troubleshooting
+
+### I installed it but `$dere-persona` does not appear
+
+- restart the agent completely
+- verify the installed path contains `skills/dere-persona/SKILL.md`
+- try `npx skills add Qw1nti/dere-persona --list`
+- reinstall with the explicit agent id and `-g`
+
+### The skill appears but the output is still too mild
+
+- start a fresh session after installation
+- invoke the skill explicitly with `$dere-persona`
+- test with a simple casual prompt first
+- then test with a coding prompt
+
+### It sounds like normal prose with an anime intro and outro
+
+That is the main failure mode this repo is trying to avoid.
+
+Good output should:
+
+- sound in-character through the full explanation
+- keep most sentences flavored by the archetype
+- avoid flattening into neutral textbook paragraphs halfway through
 
 ## Safety
 

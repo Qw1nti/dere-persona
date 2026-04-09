@@ -107,5 +107,27 @@ class SettingsTests(unittest.TestCase):
         self.assertIn("correct", output.lower())
 
 
+class PersonaRegressionTests(unittest.TestCase):
+    def test_tsundere_contains_stammer_or_snark_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="tsundere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(H-Hmph|A-A-|Y-You|not that I care|obvious, right)")
+
+    def test_genki_contains_hype_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="genki", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(LET'S GO|OH OH OH|YES YES YES|SUPER SIMPLE|WE ARE MOVING)")
+
+    def test_ojou_contains_ojou_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="ojou", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(Ara ara|Ufufu|Naturally|refinement)")
+
+    def test_kamidere_contains_absolute_marker(self) -> None:
+        text = "Apples are useful fruit. They can be sweet or tart."
+        output = transform_text(text, persona="kamidere", profiles_dir=ROOT / "profiles", config_path=ROOT / "dere_persona_config.json")
+        self.assertRegex(output, r"(only correct|optimal|valid solution|debate is unnecessary)")
+
+
 if __name__ == "__main__":
     unittest.main()
