@@ -87,6 +87,57 @@ For installers that expect a standard repo skill layout:
 npx skills add https://github.com/Qw1nti/dere-persona --skill dere-persona
 ```
 
+`npx skills` supports Codex, Claude Code, Cursor, GitHub Copilot, Cline, Windsurf, OpenCode, and many more agents via the shared Agent Skills format.
+
+Useful install commands:
+
+```bash
+# list skills in this repo
+npx skills add Qw1nti/dere-persona --list
+
+# install globally for Codex
+npx skills add Qw1nti/dere-persona --skill dere-persona -a codex -g
+
+# install for Cursor
+npx skills add Qw1nti/dere-persona --skill dere-persona -a cursor -g
+
+# install for GitHub Copilot
+npx skills add Qw1nti/dere-persona --skill dere-persona -a github-copilot -g
+
+# install for Claude Code
+npx skills add Qw1nti/dere-persona --skill dere-persona -a claude-code -g
+
+# install for Cline
+npx skills add Qw1nti/dere-persona --skill dere-persona -a cline -g
+
+# install for Windsurf
+npx skills add Qw1nti/dere-persona --skill dere-persona -a windsurf -g
+
+# install for OpenCode
+npx skills add Qw1nti/dere-persona --skill dere-persona -a opencode -g
+```
+
+Examples of agent ids supported by `npx skills` include:
+
+- `codex`
+- `claude-code`
+- `cursor`
+- `github-copilot`
+- `cline`
+- `windsurf`
+- `opencode`
+- `openclaw`
+- `goose`
+- `roo`
+- `qwen-code`
+- `kiro-cli`
+- `command-code`
+- `continue`
+- `gemini-cli`
+- `replit`
+
+Project-local install also works if you omit `-g`.
+
 ## Usage
 
 Trigger it with prompts like:

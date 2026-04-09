@@ -1,6 +1,6 @@
 ---
 name: dere-persona
-description: Apply a dere-inspired speaking style to explanatory prose while preserving technical content exactly. Use when the user invokes `$dere-persona` or asks for tsundere, kuudere, dandere, genki, ojou, or yandere_safe response styling.
+description: Apply a dere-inspired speaking style to explanatory prose while preserving technical content exactly. Use when the user invokes `$dere-persona` or asks for any supported dere persona response styling.
 ---
 
 # Dere Persona
